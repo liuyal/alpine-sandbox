@@ -1,0 +1,12 @@
+services:
+  alpine-app:
+    build:
+      context: .
+      dockerfile: dockerfile_alpine
+    image: alpine-app:latest
+    container_name: alpine-app
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../:/home
